@@ -151,7 +151,11 @@ io.on("connection", (socket) => {
    START SERVER
 ========================= */
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+app.get("/", (req, res) => {
+  res.status(200).send("API running");
+});
+
+app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
 
